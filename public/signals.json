@@ -1,1 +1,52 @@
-[]
+[
+  {
+    "_id": "AVAXUSDT-1791818526",
+    "title": "AVAXUSDT",
+    "direction": "bearish",
+    "currentPrice": 10.723,
+    "aiAnalysis": "**Entry Range:** 10.73 \u2013 10.75  \n**Target 1:** 10.47 (\u20112.5%)  \n**Target 2:** 10.05 (\u20116.5%)  \n**Stop Loss:** 10.93 (+1.75%)  \n\nA volume spike of 2.15\u00d7 combined with a sub\u201140 RSI and a 2\u2011hour price drop signals short\u2011term bearish pressure, making a quick dip trade viable. The price is already below recent resistance, supporting the entry just above the current level. Educational setup only. Virtual Digital Assets are highly volatile. Not financial advice.",
+    "volumeSpikeRatio": 2.15,
+    "rsi": 39.01,
+    "_createdDate": "2026-10-12T15:22:06Z"
+  },
+  {
+    "_id": "PUMPFUNUSDT-1791818529",
+    "title": "PUMPFUNUSDT",
+    "direction": "bearish",
+    "currentPrice": 0.005394,
+    "aiAnalysis": "**Entry Range:** 0.005394 \u2013 0.005410  \n**Target 1:** 0.005259 (\u2248\u202f2.5% \u2193)  \n**Target 2:** 0.005041 (\u2248\u202f6.5% \u2193)  \n**Stop Loss:** 0.005486 (\u2248\u202f1.75% \u2191)  \n\nThe bearish momentum is supported by a 1.72\u00d7 volume surge and a 2.55% price drop over the past 2\u202fhours, while the RSI around 38 suggests the asset is still in oversold territory but trending lower. Educational setup only. Virtual Digital Assets are highly volatile. Not financial advice.",
+    "volumeSpikeRatio": 1.72,
+    "rsi": 37.77,
+    "_createdDate": "2026-10-12T15:22:09Z"
+  },
+  {
+    "_id": "DOTUSDT-1791818531",
+    "title": "DOTUSDT",
+    "direction": "bearish",
+    "currentPrice": 1.2488,
+    "aiAnalysis": "**Entry Range:** 1.2488 \u2013 1.2505  \n**Target 1:** 1.2186 (\u20112.5%)  \n**Target 2:** 1.1677 (\u20116.5%)  \n**Stop Loss:** 1.2707 (+1.75%)\n\nThe bearish momentum is supported by a 2.39\u00d7 volume surge and a 1.88% price drop over the past 2\u202fhours, while RSI remains near the mid\u2011range, suggesting further downside pressure. Educational setup only. Virtual Digital Assets are highly volatile. Not financial advice.",
+    "volumeSpikeRatio": 2.39,
+    "rsi": 42.51,
+    "_createdDate": "2026-10-12T15:22:11Z"
+  },
+  {
+    "_id": "EIGENUSDT-1791818533",
+    "title": "EIGENUSDT",
+    "direction": "bearish",
+    "currentPrice": 0.2601,
+    "aiAnalysis": "**Entry Range:** 0.2601 \u2013 0.2610  \n**Target 1:** 0.2539 (\u20112.5%)  \n**Target 2:** 0.2435 (\u20116.5%)  \n**Stop Loss:** 0.2650 (+1.75%)  \n\nThe bearish momentum is supported by a 2\u2011hour price drop of over 2% and a volume spike of 1.29, indicating sellers are in control. RSI near 45 suggests room for further downside before oversold conditions emerge.  \n\nEducational setup only. Virtual Digital Assets are highly volatile. Not financial advice.",
+    "volumeSpikeRatio": 1.29,
+    "rsi": 44.89,
+    "_createdDate": "2026-10-12T15:22:13Z"
+  },
+  {
+    "_id": "ETHFIUSDT-1791818535",
+    "title": "ETHFIUSDT",
+    "direction": "bearish",
+    "currentPrice": 0.7002,
+    "aiAnalysis": "**Entry Range:** 0.7002\u202f\u2013\u202f0.7020  \n**Target 1:** 0.6827 (\u20112.5%)  \n**Target 2:** 0.6557 (\u20116.5%)  \n**Stop Loss:** 0.7124 (+1.75%)  \n\nThe bearish momentum is supported by a 2.86\u00d7 volume spike and a 1.77% price drop in the last two hours, while the RSI near 36 hints at continued downside pressure. The setup targets a modest first profit and a deeper second target, with a tight stop to protect against a short\u2011term bounce.  \n\nEducational setup only. Virtual Digital Assets are highly volatile. Not financial advice.",
+    "volumeSpikeRatio": 2.86,
+    "rsi": 36.09,
+    "_createdDate": "2026-10-12T15:22:15Z"
+  }
+]
