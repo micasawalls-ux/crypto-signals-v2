@@ -1,29 +1,66 @@
-import React, { useState, useEffect } from 'react';
-import { Signal } from './types';
-import { SignalFeed } from './SignalFeed';
+import { useEffect, useState } from "react";
+import type { Signal } from "./types";
+import { SignalFeed } from "./SignalFeed";
 
-function App() {
-  const [signals, setSignals] = useState<Signal[]>([]);
-
-  useEffect(() => {
-    fetch('/signals.json')
-      .then(res => res.json())
-      .then(data => setSignals(data))
-      .catch(err => console.error(err));
-  }, []);
-
-  return (
-    <div className="min-h-screen bg-gray-950 text-white p-6">
-      <header className="max-w-4xl mx-auto mb-8">
-        <h1 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-          Crypto Signals v2
-        </h1>
-      </header>
-      <main className="max-w-4xl mx-auto">
-        <SignalFeed signals={signals} />
-      </main>
-    </div>
-  );
+interface RawRecord {
+  _id: string;
+  title?: string;
+  direction?: string;
+  currentPrice?: number;
+  aiAnalysis?: string;
+  _createdDate?: string;
+  volumeSpikeRatio?: number;
+  rsi?: number;
 }
 
-export default App;
+function mapRecord(record: RawRecord): Signal {
+  const rawDir = (record.direction || "").toLowerCase();
+  return {
+    id: record._id,
+    ticker: record.title ?? "UNKNOWN",
+    direction:
+      rawDir === "bullish" || rawDir === "bearish" || rawDir === "neutral"
+        ? rawDir
+        : "neutral",
+    entry_price: record.currentPrice ?? 0,
+    current_price: record.currentPrice ?? undefined,
+    analysis: record.aiAnalysis ?? "",
+    volume_spike_ratio: record.volumeSpikeRatio,
+    rsi: record.rsi,
+    created_at: record._createdDate ?? new Date().toISOString(),
+  };
+}
+
+export default function App() {
+  const [signals, setSignals] = useState<Signal[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadSignals() {
+      try {
+        const res = await fetch(`/signals.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data: RawRecord[] = await res.json();
+        if (!cancelled) {
+          setSignals(Array.isArray(data) ? data.map(mapRecord) : []);
+          setLoading(false);
+        }
+      } catch (err) {
+        console.error("Failed to load signals:", err);
+        if (!cancelled) setLoading(false);
+      }
+    }
+
+    loadSignals();
+    const interval = setInterval(loadSignals, 60_000);
+
+    return () => {
+      cancelled = true;
+      clearInterval(interval);
+    };
+  }, []);
+
+  return <SignalFeed signals={signals} isLoading={loading} />;
+}
